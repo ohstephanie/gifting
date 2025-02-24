@@ -1,18 +1,29 @@
 body {
-    font-family: sans-serif;
+    background-image: url(njtransit.png);
+    font-family: monospace;
     background-color: rgb(168, 186, 194);
     font-weight: 500;
+    font-size: large;
+    background-size: cover; 
+    background-repeat: no-repeat;
 }
 
 h1 {
     color: rgb(27, 27, 82);
-    font-size: xx-large;
+    font-size: 50px;
 }
 
 .container {
-    width: 40%;
+    display: grid;
+    place-items: center;
+    height: 80vh;
+    width: 30%;
     background-color: white;
     padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .button {
@@ -22,4 +33,11 @@ h1 {
     margin: 0.2em 0.1em;
     background: white;
     text-decoration: none;
+}
+
+.btn-group {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
