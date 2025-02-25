@@ -1,7 +1,7 @@
 body {
     /* background-image: url(njtransit.png); */
     font-family: monospace;
-    background-color: rgb(168, 186, 194);
+    background-color: rgb(210, 228, 234);
     font-weight: 500;
     font-size: large;
     background-size: cover; 
@@ -15,6 +15,7 @@ body {
     font-size: 50px;
     padding-left: 20px;
     text-align: left;
+    font-weight: bold;
 }
 
 .subtitle {
