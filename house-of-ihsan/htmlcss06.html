@@ -1,14 +1,182 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <title>House of Ihsan</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <style>
-      /* Put your CSS here */
+
+      body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: azure;
+            text-align: center;
+      }
+      .pacifico-regular {
+        font-family: "Pacifico", serif;
+        font-weight: 400;
+        font-style: normal;
+        color: rgb(62, 42, 17);      
+      }
+      
+      h1 {
+        font-size: 100px;
+      }
+
+      a {
+        color: brown;
+      }
+
+      .highlight {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgb(62, 42, 17);
+            border-radius: 60px;
+            font-weight: bold;
+            color: bisque;
+        }
+
+        .circle {
+          width: 100px;
+          height: 100px;
+          background: bisque;
+          border-radius: 50%
+        }
+      
+        table {
+          border-collapse: collapse;
+          width: 50%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+
     </style>
   </head>
   <body>
-    <!-- Put your HTML here-->
+    <h1 class="pacifico-regular">House of Ihsan</h1>
+
+    <h2 class="highlight">Address</h2><br/>
+    <a href="https://maps.app.goo.gl/ZmBPLdDAU48cNzicA" target="_blank"
+          >6 Spring St, Princeton, NJ 08542</a
+        > <br/>
+        <a href="http://instagram.com/houseofihsan" target="_blank"
+          >Instagram</a
+        > <br/>
+
+    <h2 class="highlight">Hours</h2>
+    <center>
+      <table>
+        <tr>
+          <th>Day</th>
+          <th>Time</th>
+        </tr>
+        <tr>
+          <td>Monday</td>
+          <td>CLOSED</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>8:00AM-5:00PM</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>8:00AM-5:00PM</td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td>8:00AM-5:00PM</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>8:00AM-8:00PM</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>8:00AM-8:00PM</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>8:00AM-4:00PM</td>
+        </tr>
+      </table>
+    </center>
+
+    <h2 class="highlight">Menu</h2>
+    <details>
+      <summary>Espresso Drinks</summary>
+        <ul>
+          <li>Dbl. Espresso ............... <mark>$3.80</mark></li>
+          <li>Machiatto ............... <mark>$4.35</mark></li>
+          <li>Cappuccino ............... <mark>$4.45</mark></li>
+          <li>Cortado ............... <mark>$4.35</mark></li>
+          <li>Latte ............... <mark>$5.15</mark> (md), <mark>$5.65</mark> (lg)</li>
+          <li>Americano ............... <mark>$4.00</mark> (md), <mark>$4.15</mark> (lg)</li>
+          <li>Flat White ............... <mark>$4.60</mark></li>
+          <li>Hot Chocolate ............... <mark>$4.50</mark> (sm), <mark>$5.00</mark> (lg)</li>
+        </ul>
+    </details>
+      
+    <details>
+        <summary>Pourover Coffee</summary>
+          <ul>
+            <li>Sumatra Solok Radjo ............... <mark>$4.50</mark></li>
+            <li>Ethiopia Kossa Geshe ............... <mark>$4.65</mark></li>
+            <li>Kenya Muriuki ............... <mark>$5.50</mark></li>
+          </ul>
+    </details>
+
+    <details>
+        <summary>Drip Coffee</summary>
+          <ul>
+            <li>Drip Coffee ............... <mark>$3.50</mark> (sm), <mark>$4.00</mark> (md), <mark>$4.50</mark> (lg)</li>
+          </ul>
+    </details>
+
+    <details>
+        <summary>Tea</summary>
+          <ul>
+            <li>Sencha (Green Tea) ............... $5.50</li>
+            <li>Dragonwell (Green Tea) ............... $5.75</li>
+            <li>Keemun (Black Teas) ............... $3.75</li>
+            <li>Peppermint (Herbal Tea) ............... $3.65</li>
+            <li>Chamomile (Herbal Tea) ............... $4.25</li>
+            <li>Earl Grey (Black Teas) ............... $3.65</li>
+            <li>Thai Iced Tea ............... $5.00</li>
+          </ul>
+      </details>
+
+      <details>
+        <summary>Retail Beans</summary>
+          <ul>
+            <li>Espresso Reserve, 2lb bag ............... $60.00</li>
+            <li>Ethiopia Kossa Geshe, 10 oz Box ............... $29.00</li>
+            <li>
+              Seekers Reserve, Guatemala Espresso 10 oz Box ............... $22.00
+            </li>
+            <li>
+              Solok Radjo Sumatra, Honey Process, 10 oz Box ............... $28.00
+            </li>
+            <li>Kenya Muriuki, 10 oz Box ............... $39.00</li>
+          </ul>
+
+    </details>
+
+    <h2 class="highlight">About</h2>
+    <p>
+      <i
+        >House of Ihsan is a boutique café in downtown Princeton, offering
+        premium coffee, artisanal teas, house-baked goods, and halal-certified
+        treats.</i
+      >
+    </p>
+    <p>
+      Email: <a href="mailto:houseofihsan@gmail.com">houseofihsan@gmail.com</a>
+    </p>
   </body>
 </html>
