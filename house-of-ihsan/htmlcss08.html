@@ -1,14 +1,161 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Pacifico&display=swap" rel="stylesheet">
     <title>House of Ihsan</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <style>
-      /* Put your CSS here */
+      .instrument-serif-regular {
+          font-family: "Instrument Serif", serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+
+      .instrument-serif-regular-italic {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        font-style: italic;
+      }
+
+      .circle {
+        width: 100vh; /* Huge size relative to the screen height */
+        height: 100vh;
+        background: rgb(209, 111, 69);
+        border-radius: 50%;
+        position: fixed;
+        right: -50vh; /* Moves it halfway off the screen */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+
+      h1 {
+        font-size: 80px;
+      }
+
+      body {
+        background-color: rgb(215, 246, 255);
+        color: rgb(97, 48, 27);
+        margin-top: 5em;
+        margin-left: 10em;
+        font-size: large;
+      }
+
+      a {
+        color: rgb(209, 111, 69);
+      }
+
+      .box {
+        outline: solid rgb(97, 48, 27) 1px;
+        padding-left: 10px;
+        width: 20%;
+        padding-bottom: 10px;
+      }
     </style>
   </head>
-  <body>
-    <!-- Put your HTML here-->
+  <body class="instrument-serif-regular">
+    <h1 class="instrument-serif-regular-italic">House of Ihsan</h1>
+    <div class="circle"></div>
+    <div class="box">
+      <h2>Address</h2>
+      <ul>
+        <li>
+          <a href="https://maps.app.goo.gl/ZmBPLdDAU48cNzicA" target="_blank"
+            >6 Spring St, Princeton, NJ 08542</a
+          >
+        </li>
+        <li>
+          <a href="http://instagram.com/houseofihsan" target="_blank"
+            >Instagram</a
+          >
+        </li>
+      </ul>
+  </div>
+
+  <div class="box">
+    <h2>Hours</h2>
+    <ul>
+      <li>Tue-Thur 8am-5pm</li>
+      <li>Fri-Sat 8am-8pm</li>
+      <li>Sun 8am-4pm</li>
+      <li>Mon Closed</li>
+    </ul>
+  </div>
+    <h2>Menu</h2>
+    <details>
+      <summary>Espresso Drinks</summary>
+        <ul>
+          <li>Dbl. Espresso ............... <mark>$3.80</mark></li>
+          <li>Machiatto ............... <mark>$4.35</mark></li>
+          <li>Cappuccino ............... <mark>$4.45</mark></li>
+          <li>Cortado ............... <mark>$4.35</mark></li>
+          <li>Latte ............... <mark>$5.15</mark> (md), <mark>$5.65</mark> (lg)</li>
+          <li>Americano ............... <mark>$4.00</mark> (md), <mark>$4.15</mark> (lg)</li>
+          <li>Flat White ............... <mark>$4.60</mark></li>
+          <li>Hot Chocolate ............... <mark>$4.50</mark> (sm), <mark>$5.00</mark> (lg)</li>
+        </ul>
+    </details>
+      
+    <details>
+        <summary>Pourover Coffee</summary>
+          <ul>
+            <li>Sumatra Solok Radjo ............... <mark>$4.50</mark></li>
+            <li>Ethiopia Kossa Geshe ............... <mark>$4.65</mark></li>
+            <li>Kenya Muriuki ............... <mark>$5.50</mark></li>
+          </ul>
+    </details>
+
+    <details>
+        <summary>Drip Coffee</summary>
+          <ul>
+            <li>Drip Coffee ............... <mark>$3.50</mark> (sm), <mark>$4.00</mark> (md), <mark>$4.50</mark> (lg)</li>
+          </ul>
+    </details>
+
+    <details>
+        <summary>Tea</summary>
+          <ul>
+            <li>Sencha (Green Tea) ............... $5.50</li>
+            <li>Dragonwell (Green Tea) ............... $5.75</li>
+            <li>Keemun (Black Teas) ............... $3.75</li>
+            <li>Peppermint (Herbal Tea) ............... $3.65</li>
+            <li>Chamomile (Herbal Tea) ............... $4.25</li>
+            <li>Earl Grey (Black Teas) ............... $3.65</li>
+            <li>Thai Iced Tea ............... $5.00</li>
+          </ul>
+      </details>
+
+      <details>
+        <summary>Retail Beans</summary>
+          <ul>
+            <li>Espresso Reserve, 2lb bag ............... $60.00</li>
+            <li>Ethiopia Kossa Geshe, 10 oz Box ............... $29.00</li>
+            <li>
+              Seekers Reserve, Guatemala Espresso 10 oz Box ............... $22.00
+            </li>
+            <li>
+              Solok Radjo Sumatra, Honey Process, 10 oz Box ............... $28.00
+            </li>
+            <li>Kenya Muriuki, 10 oz Box ............... $39.00</li>
+          </ul>
+
+    </details>
+
+    <div class="box">
+      <h2>About</h2>
+      <p>
+        <i
+          >House of Ihsan is a boutique café in downtown Princeton, offering
+          premium coffee, artisanal teas, house-baked goods, and halal-certified
+          treats.</i
+        >
+      </p>
+      <p>
+        Email: <a href="mailto:houseofihsan@gmail.com">houseofihsan@gmail.com</a>
+      </p>
+    </div>
   </body>
 </html>
