@@ -11,6 +11,24 @@
       img {
         max-width: 100%;
       }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .blinking-text {
+        animation: blink 1.5s infinite;
+      }
     </style>
   </head>
   <body>
@@ -25,14 +43,14 @@
         <div class="subtitle">1.5 HOURS &<br> 
         3O QUESTIONS</div>
         <br>
-        <div class="text"><strong>Instructions: </strong>There are 3 levels. As you progress,
+        <div class="text"><strong>Instructions: </strong><p></p>There are 3 levels. As you progress,
             the questions get more personal. <br>
             Feel free to skip around the questions, just make sure that everyone playing answers them. 
         </div>
         <br>
         <div class="text">What better time to get closer than on the train?</div>
         <div class="oval"></div>
-        <a href="mode.html" class="button" style="background: rgb(27, 27, 82); color: white;">let's be friends!</a>
+        <a href="mode.html" class="button"><div class="blinking-text">let's be friends!</div></a>
 
       </div>
 
