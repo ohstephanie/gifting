@@ -1,50 +1,70 @@
-<link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
 
-<div class="container">
-    <a href="index.html" style="text-decoration: none;"><div class="title">LEVEL THREE</div></a>
-    <a href="mode.html"><div class="button">go back to all levels</div></a>
-    <ol id="questions"></ol>
-
-    <div class="btn-group-lvls">
-        <a href=""><div id="shuffle-btn" class="button">shuffle questions</div></a>
-        <a href="done.html"><div class="button">we are done →</div></a>
+<html>
+  <head>
+    <title>LEVEL THREE</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+  </head>
+  <body>
+    
+    <div class="container">
+        <a href="index.html" style="text-decoration: none;"><div class="title">LEVEL THREE</div></a>
+        <a href="mode.html"><div class="button">go back to all levels</div></a>
+        <ol id="questions"></ol>
+    
+        <div class="btn-group-lvls">
+            <a href=""><div id="shuffle-btn" class="button">shuffle questions</div></a>
+            <a href="done.html"><div class="button">we are done →</div></a>
+        </div>
     </div>
-</div>
+    
+    <script>
+        function getRandomQuestions(questions, num = 10) {
+        let shuffled = questions.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, num);
+        }
+    
+        const questions = [
+            "What do you think is your best trait?",
+            "Do you have a strong passion for something that most people don't know?",
+            "What is one thing you wish you could change about yourself?",
+            "Do you have any regrets from freshman year?",
+            "Has your relationship with your high school friends changed?",
+            "What is something you are currently struggling with?",
+            "What's a fear that holds you back?",
+            "How do you define love?",
+            "Do you think people can truly change?",
+            "If you could know the honest truth about one thing in your life, what would you want to know?",
+            "What's the hardest goodbye you've ever had to say?",
+            "What's the loneliest you have ever felt?",
+            "What's a regret you have?",
+            "What is something you've had to unlearn?",
+            "What's something you wish other people knew about you?",
+            "What's an insecurity you struggle with?",
+            "What's something embarrassing that you think about often?",
+            "How do you define friendships and best friends?"
+        ];
+    
+        const selectedQuestions = getRandomQuestions(questions);
+    
+        // Find the existing <ol> with ID "questions"
+        const ol = document.getElementById("questions");
+        if (ol) {
+            ol.innerHTML = ""; // Clear existing items
+            selectedQuestions.forEach(question => {
+                const li = document.createElement("li");
+                li.textContent = question;
+                ol.appendChild(li);
+            });
+        } else {
+            console.error('No <ol> element with ID "questions" found.');
+        }
+    
+        // Add event listener to button
+        document.getElementById("shuffle-btn").addEventListener("click", displayRandomQuestions);
+    </script>
 
-<script>
-    function getRandomQuestions(questions, num = 10) {
-    let shuffled = questions.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, num);
-    }
-
-    const questions = [
-        "What do you think is your best trait?",
-        "Do you have a strong passion for something that most people don't know?",
-        "What is one thing you wish you could change about yourself?",
-        "Do you have any regrets from freshman year?",
-        "Has your relationship with your high school friends changed?",
-        "What is something you are currently struggling with?",
-        "What's a fear that holds you back?",
-        "How do you define love?",
-        "Do you think people can truly change?",
-        "If you could know the honest truth about one thing in your life, what would you want to know?"
-    ];
-
-    const selectedQuestions = getRandomQuestions(questions);
-
-    // Find the existing <ol> with ID "questions"
-    const ol = document.getElementById("questions");
-    if (ol) {
-        ol.innerHTML = ""; // Clear existing items
-        selectedQuestions.forEach(question => {
-            const li = document.createElement("li");
-            li.textContent = question;
-            ol.appendChild(li);
-        });
-    } else {
-        console.error('No <ol> element with ID "questions" found.');
-    }
-
-    // Add event listener to button
-    document.getElementById("shuffle-btn").addEventListener("click", displayRandomQuestions);
-</script>
+  </body>
+</html>

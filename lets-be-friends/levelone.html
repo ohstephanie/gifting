@@ -1,54 +1,81 @@
-<link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
 
-<div class="container">
-    <a href="index.html" style="text-decoration: none;"><div class="title">LEVEL ONE</div></a>
-    <a href="mode.html"><div class="button">go back to all levels</div></a>
+<html>
+  <head>
+    <title>LEVEL ONE</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+  </head>
+  <body>
     
-    <ol id="questions"></ol>
-    <div class="btn-group-lvls">
-        <a href=""><div id="shuffle-btn" class="button">shuffle questions</div></a>
-        <a href="leveltwo.html"><div class="button">we are ready for level 2 →</div></a>
+    <div class="container">
+        <a href="index.html" style="text-decoration: none;"><div class="title">LEVEL ONE</div></a>
+        <a href="mode.html"><div class="button">go back to all levels</div></a>
+        
+        <ol id="questions"></ol>
+        <div class="btn-group-lvls">
+            <a href=""><div id="shuffle-btn" class="button">shuffle questions</div></a>
+            <a href="leveltwo.html"><div class="button">we are ready for level 2 →</div></a>
+        </div>
     </div>
-</div>
 
-<script>
-    function getRandomQuestions(questions, num = 10) {
-    let shuffled = questions.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, num);
-    }
+    <script>
+        function getRandomQuestions(questions, num = 10) {
+        let shuffled = questions.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, num);
+        }
+    
+        const questions = [
+            "What is your favorite color?",
+            "What is your middle name?",
+            "What is your favorite animal?",
+            "What is your favorite song right now?",
+            "What is one hobby you want to pick up in college?",
+            "If you could only eat breakfast, lunch, or dinner foods for every meal, which would you choose?",
+            "What's your comfort book, show, or movie?",
+            "What is your MBTI?",
+            "What's something small that always makes you happy?",
+            "If you could relive one year of your life, which one would it be?",
+            "What are your three favorite things that happened today?",
+            "What's your favorite number?",
+            "Where are you from?",
+            "What is your comfort meal or food?",
+            "Are you more of a night owl or an early bird?",
+            "What’s your ideal way to spend a free afternoon?",
+            "What’s your go-to karaoke song?",
+            "What was your dream job as a kid?",
+            "Do you prefer sunrises or sunsets?",
+            "What is one thing you always carry in your bag?",
+            "What's an instrument you have always wanted to play?",
+            "Do you prefer sweet or savory snacks?",
+            "Do you speak any other languages?",
+            "What is your top travel destination?",
+            "Beach or mountains?",
+            "Favorite pick-me-up drink from a cafe?",
+            "What's your favorite season and why?",
+            "What kind of weather do you like?",
+            "Big cities or small towns?"
+        ];
+    
+        const selectedQuestions = getRandomQuestions(questions);
+    
+        // Find the existing <ol> with ID "questions"
+        const ol = document.getElementById("questions");
+        if (ol) {
+            ol.innerHTML = ""; // Clear existing items
+            selectedQuestions.forEach(question => {
+                const li = document.createElement("li");
+                li.textContent = question;
+                ol.appendChild(li);
+            });
+        } else {
+            console.error('No <ol> element with ID "questions" found.');
+        }
+    
+        // Add event listener to button
+        document.getElementById("shuffle-btn").addEventListener("click", displayRandomQuestions);
+    </script>
 
-    const questions = [
-        "What is your favorite color?",
-        "What is your middle name?",
-        "What is your favorite animal?",
-        "What is your favorite song right now?",
-        "What is one hobby you want to pick up in college?",
-        "If you could only eat breakfast, lunch, or dinner foods for every meal, which would you choose?",
-        "What's your comfort book, show, or movie?",
-        "What is your MBTI?",
-        "What's something small that always makes you happy?",
-        "If you could relive one year of your life, which one would it be?",
-        "What are three favorite things that happened today?",
-        "What's your favorite number?",
-        "Where are you from?",
-        "What is your comfort meal or food?"
-    ];
-
-    const selectedQuestions = getRandomQuestions(questions);
-
-    // Find the existing <ol> with ID "questions"
-    const ol = document.getElementById("questions");
-    if (ol) {
-        ol.innerHTML = ""; // Clear existing items
-        selectedQuestions.forEach(question => {
-            const li = document.createElement("li");
-            li.textContent = question;
-            ol.appendChild(li);
-        });
-    } else {
-        console.error('No <ol> element with ID "questions" found.');
-    }
-
-    // Add event listener to button
-    document.getElementById("shuffle-btn").addEventListener("click", displayRandomQuestions);
-</script>
+  </body>
+</html>
