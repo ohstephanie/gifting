@@ -69,7 +69,16 @@ body {
     }
 
     .qr-code {
-        width: 80px;
+        width: 150px;
+    }
+
+    .button {
+        padding: 0.5em;
+    }
+
+    .oval {
+        width: 30px;
+        height: 10px;
     }
 }
 
