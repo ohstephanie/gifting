@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!-- CSS/HTML for clouds taken from https://codepen.io/elchiconube/pen/naxOWv-->
+<html>
+    <head>
+        <title>A pick-me-up for Allen</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+    </head>
+
+    <style>
+        *{ margin: 0; padding: 0;}
+
+        body {
+            /*To hide the horizontal scroller appearing during the animation*/
+            overflow: hidden;
+        }
+
+        #clouds{
+            padding: 100px 0;
+            background: #c9dbe9;
+            background: -webkit-linear-gradient(top, #c9dbe9 60%, #fff 90%);
+            background: -linear-gradient(top, #c9dbe9 10%, #fff 90%);
+            background: -moz-linear-gradient(top, #c9dbe9 10%, #fff 90%);
+        }
+
+        /*Time to finalise the cloud shape*/
+        .cloud {
+            width: 200px; height: 60px;
+            background: #fff;
+            
+            border-radius: 200px;
+            -moz-border-radius: 200px;
+            -webkit-border-radius: 200px;
+            
+            position: relative; 
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .cloud:before, .cloud:after {
+            content: '';
+            position: absolute; 
+            background: #fff;
+            width: 100px; height: 80px;
+            position: absolute; top: -15px; left: 10px;
+            
+            border-radius: 100px;
+            -moz-border-radius: 100px;
+            -webkit-border-radius: 100px;
+            
+            -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+        }
+
+        .cloud:after {
+            width: 120px; height: 120px;
+            top: -55px; left: auto; right: 15px;
+        }
+
+        /*Time to animate*/
+        .x1 {
+            -webkit-animation: moveclouds 30s linear infinite;
+            -moz-animation: moveclouds 30s linear infinite;
+            -o-animation: moveclouds 30s linear infinite;
+        }
+
+        /*variable speed, opacity, and position of clouds for realistic effect*/
+        .x2 {
+            left: 200px;
+            
+            -webkit-transform: scale(0.6);
+            -moz-transform: scale(0.6);
+            transform: scale(0.6);
+            opacity: 0.6; /*opacity proportional to the size*/
+            
+            /*Speed will also be proportional to the size and opacity*/
+            /*More the speed. Less the time in 's' = seconds*/
+            -webkit-animation: moveclouds 35s linear infinite;
+            -moz-animation: moveclouds 35s linear infinite;
+            -o-animation: moveclouds 35s linear infinite;
+        }
+
+        .x3 {
+            left: -250px; top: -200px;
+            
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            transform: scale(0.8);
+            opacity: 0.8; /*opacity proportional to the size*/
+            
+            -webkit-animation: moveclouds 20s linear infinite;
+            -moz-animation: moveclouds 20s linear infinite;
+            -o-animation: moveclouds 20s linear infinite;
+        }
+
+        .x4 {
+            left: 470px; top: -250px;
+            
+            -webkit-transform: scale(0.75);
+            -moz-transform: scale(0.75);
+            transform: scale(0.75);
+            opacity: 0.75; /*opacity proportional to the size*/
+            
+            -webkit-animation: moveclouds 30s linear infinite;
+            -moz-animation: moveclouds 30s linear infinite;
+            -o-animation: moveclouds 30s linear infinite;
+        }
+
+        .x5 {
+            left: -150px; top: -150px;
+            
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            transform: scale(0.8);
+            opacity: 0.8; /*opacity proportional to the size*/
+            
+            -webkit-animation: moveclouds 30s linear infinite;
+            -moz-animation: moveclouds 30s linear infinite;
+            -o-animation: moveclouds 30s linear infinite;
+        }
+
+        @-webkit-keyframes moveclouds {
+            0% {margin-left: 1000px;}
+            100% {margin-left: -1000px;}
+        }
+        @-moz-keyframes moveclouds {
+            0% {margin-left: 1000px;}
+            100% {margin-left: -1000px;}
+        }
+        @-o-keyframes moveclouds {
+            0% {margin-left: 1000px;}
+            100% {margin-left: -1000px;}
+        }
+
+        .title {
+            color: rgb(133, 151, 211);
+            text-align: center;
+            font-size: 30pt;
+        }
+
+        .text {
+            padding: 1em;
+            margin: 1em;
+            color: rgb(133, 151, 211);
+            text-align: center;
+            font-size: 10pt;
+        }
+
+        .popup {
+            width: 300px;
+
+        }
+
+        .video-popup {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .video-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: hidden;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #555;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+                
+    </style>
+
+    <body>
+        <div id="clouds">
+            <div id="1_rebekah" class="cloud x1"></div>
+            <div id="2_daniel" class="cloud x2"></div>
+            <div id="3_anthea" class="cloud x3"></div>
+            <div id="4_adam" class="cloud x4"></div>
+            <div class="cloud x5"></div>
+        </div>     
+        
+        <div id="videoPopup" class="video-popup">
+            <div class="video-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <video id="popupVideo" width="800" controls autoplay>
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+
+        <div class="title">a pick-me-up for you</div>
+        <div class="text">click on the clouds</div>
+    </body>
+
+    <script>
+
+        function closePopup() {
+            const popup = document.getElementById("videoPopup");
+            const video = document.getElementById("popupVideo");
+            popup.style.display = "none";
+            video.pause();
+            video.currentTime = 0;
+        }
+        window.onload = function() {
+            const clouds = document.querySelectorAll('.cloud');
+            const video = document.getElementById("popupVideo");
+            const popup = document.getElementById("videoPopup");
+            
+            clouds.forEach(cloud => {
+                cloud.addEventListener('click', function() {
+                    const id = cloud.id;
+                    let videoSrc = "";
+                    if (id === "1_rebekah") {
+                        videoSrc = "Rebekah_Heather.mp4";
+                    } else if (id === "2_daniel") {
+                        console.log("test 2");
+                    } else if (id === "3_anthea") {
+                        console.log("test 3");
+                    } else if (id === "4_adam") {
+                        console.log("test 4");
+                    } else {
+                        console.log("clicked a cloud with no ID");
+                    }
+
+                    video.querySelector("source").src = videoSrc;
+                    video.load();
+                    popup.style.display = "block";
+                });
+            });
+        };
+    </script>
+    
+</html>
