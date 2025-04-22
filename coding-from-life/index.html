@@ -9,6 +9,7 @@
 		.canvas {
 			background-color: rgb(171, 58, 38);
 			z-index: 0;
+			overflow: hidden;
 		}
 
 		.table {
@@ -66,6 +67,160 @@
 			height: 30%;
 			top: 0;
 			width: 100%;
+		}
+
+		/* Vertical lines to create background*/
+		.vl {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 40px;
+		}
+
+		.vl.two {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 80px;
+		}
+
+		.vl.three {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 120px;
+		}
+
+		.vl.four {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 160px;
+		}
+
+		.vl.five {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 200px;
+		}
+
+		.vl.six {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 240px;
+		}
+
+		.vl.seven {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 280px;
+		}
+
+		.vl.eight {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 320px;
+		}
+
+		.vl.nine {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 360px;
+		}
+
+		.vl.ten {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 400px;
+		}
+
+		.vl.eleven {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 400px;
+		}
+		
+		.vl.twelve {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 440px;
+		}
+
+		.vl.thirteen {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 480px;
+		}
+
+		.vl.fourteen {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 520px;
+		}
+
+		.vl.fifteen {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 560px;
+		}
+
+		.vl.sixteen {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 600px;
+		}
+
+		.vl.seventeen {
+			border-left: 2px solid rgb(168, 231, 148);
+			height: 100%;
+			position: absolute;
+			left: 640px;
+		}
+
+		.hl {
+			border-bottom: 2px solid rgb(168, 231, 148);
+			width: 100%;
+			position: absolute;
+			top: 40px;
+		}
+
+		.hl.two {
+			border-bottom: 2px solid rgb(168, 231, 148);
+			width: 100%;
+			position: absolute;
+			top: 80px;
+		}
+
+		.hl.three {
+			border-bottom: 2px solid rgb(168, 231, 148);
+			width: 100%;
+			position: absolute;
+			top: 120px;
+		}
+
+		.triangle {
+			width: 0px;
+			height: 0px;
+			border-style: solid;
+			border-width: 0 400.5px 340px 130.5px;
+			border-color: transparent transparent burlywood transparent;
+			transform: rotate(40deg);
+			position: absolute;
+			top: 35px;
+			right: -377px;
+
 		}
 
 		.vase {
@@ -298,9 +453,33 @@
 <body>
 
   <div class="canvas">
-		<div class="top-half"></div>
+		<div class="top-half">
+			<div class="vl"></div>
+			<div class="vl two"></div>
+			<div class="vl three"></div>
+			<div class="vl four"></div>
+			<div class="vl five"></div>
+			<div class="vl six"></div>
+			<div class="vl seven"></div>
+			<div class="vl eight"></div>
+			<div class="vl nine"></div>
+			<div class="vl ten"></div>
+			<div class="vl eleven"></div>
+			<div class="vl twelve"></div>
+			<div class="vl thirteen"></div>
+			<div class="vl fourteen"></div>
+			<div class="vl fifteen"></div>
+			<div class="vl sixteen"></div>
+			<div class="vl seventeen"></div>
+			<div class="hl"></div>
+			<div class="hl two"></div>
+			<div class="hl three"></div>
+			<div class="hl four"></div>
+			<div class="hl five"></div>
+		</div>
 		<div class="table"></div>
 		<div class="bottom-red"></div>
+		<div class="triangle"></div>
 		<!-- put your objects here -->
 		<div class="ruler-shadow"></div>
 		<div class="ruler"></div>
