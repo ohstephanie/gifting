@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Coding from Life</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="base.css" type="text/css" />
+	<style>
+		.canvas {
+			background-color: rgb(150, 44, 25);
+			z-index: 0;
+		}
+
+		.table {
+			background-color: burlywood;
+			width: 300px;
+			height: 100%;
+			position: absolute;
+			right: -100px;
+			bottom: 0;
+			top: 0;
+		}
+
+		.bottom-red {
+			height: 70%;
+			width: 300px;
+			background-color: rgb(150, 44, 25);
+			position: absolute;
+			bottom: 0;
+			right: -100px;
+		}
+
+		.apple {
+			width: 90px;
+			height: 90px;
+			border-radius: 45%; /* Not a perfect circle */
+			background-color: rgb(99, 20, 20);
+			position: absolute;
+			top: 300px;
+			left: 150px;
+		}
+
+		.shadow {
+			width: 90px;
+			height: 90px;
+			border-radius: 50%; /* Not a perfect circle */
+			background-color: rgba(31, 15, 15, 0.5);
+			position: absolute;
+			top: 310px;
+			left: 140px;
+			transform: rotate(30deg);
+		}
+
+		.top-half {
+			position: absolute;
+			background-color: rgb(31, 75, 31);
+			height: 30%;
+			top: 0;
+			width: 100%;
+		}
+
+		.vase {
+			height: 250px;
+			width: 180px;
+			border-right: 2px solid azure;
+			border-left: 2px solid azure;
+			position: absolute;
+			bottom: 80px;
+			left: 300px;
+		}
+
+		.vase-bottom {
+			/* Want the bottom to be an oval relative to its parent */
+			height: 100px;
+			width: 100%;
+			background-color: rgba(255,255,255, 0.5);
+			position: absolute;
+			bottom: -50px; /* Make position from bot 0 so it goes to the bottom*/
+			border-radius: 50%;
+		}
+
+		.vase-shadow {
+			height: 100px;
+			width: 100%;
+			background-color: rgba(255,255,255, 0.5);
+			position: absolute;
+			left: -10px;
+			bottom: -50px; /* Make position from bot 0 so it goes to the bottom*/
+			border-radius: 50%;
+		}
+
+		.vase-top {
+			height: 80px;
+			width: 100%;
+			border: 2px solid white;
+			border-radius: 50%;
+			position: absolute;
+			top: -50px;
+		}
+
+		.flower {
+			height: 400px;
+			width: 40px;
+			position: absolute;
+			bottom: 0;
+			left: 40px;
+			transform: rotate(-15deg);
+		}
+
+		 /* The flower on the right */
+		 /* Any classes that contain two will override flower */
+		.flower.two {
+			height: 400px;
+			width: 40px;
+			position: absolute;
+			bottom: 0;
+			left: 40px;
+			transform: rotate(15deg);
+		}
+
+		.stem {
+			background-color: green;
+			height: 100%;
+			width: 10px;
+			position: absolute;
+			left: 40%;
+		}
+
+		.petals {
+			height: 50px;
+			width: 100px;
+			border-radius: 50%;
+			background-color: yellow;
+			position: absolute;
+			left: -30px;
+		}
+
+		.petal {
+			background-color: yellow;
+			height: 50px;
+			width: 30px;
+			border-radius: 50%;
+			position: absolute;
+			transform: rotate(-80deg);
+			left: -10px;
+		}
+
+		.petal.two {
+			background-color: yellow;
+			height: 50px;
+			width: 30px;
+			border-radius: 50%;
+			position: absolute;
+			transform: rotate(-50deg);
+			bottom: 30px;
+			left: 0;
+		}
+
+		.petal.three {
+			background-color: yellow;
+			height: 50px;
+			width: 30px;
+			border-radius: 50%;
+			position: absolute;
+			transform: rotate(-10deg);
+			bottom: 30px;
+			left: 30px;
+		}
+
+		.petal.four {
+			background-color: yellow;
+			height: 50px;
+			width: 30px;
+			border-radius: 50%;
+			position: absolute;
+			transform: rotate(10deg);
+			bottom: 30px;
+			left: 60px;
+		}
+
+		.petal.five {
+			background-color: yellow;
+			height: 50px;
+			width: 30px;
+			border-radius: 50%;
+			position: absolute;
+			transform: rotate(40deg);
+			bottom: 20px;
+			left: 90px;
+		}
+
+		.ruler {
+			height: 550px;
+			width: 20px;
+			position: absolute;
+			background-color: gray;
+			transform: rotate(-85deg) skew(-10deg);
+			right: 350px;
+			top: 40px;
+			z-index: 0; /* Ruler goes behind everything except the red*/
+		}
+
+		.plate {
+			background-color: rgba(255,255,255,0.5);
+			height: 70px;
+			width: 180px;
+			border-radius: 50%;
+			position: absolute;
+			bottom: 50px;
+			right: 80px;
+		}
+
+		.cake {
+			width: 100px;
+			height: 50px;
+			border-top: 20px solid transparent;
+			border-bottom: 60px solid transparent;
+			border-left: 128px solid rgb(90, 58, 31);
+			transform: rotate(190deg);
+			position: absolute;
+			bottom: 10px;
+		}
+
+		.candle {
+			height: 35px;
+			width: 8px;
+			background: white;
+			position: absolute;
+			left: 80px;
+			top: -10px;
+		}
+
+		.flame {
+			height: 30px;
+			width: 12px;
+			background: yellow;
+			position: absolute;
+			left: 80px;
+			top: -45px;
+			border-radius: 50%;
+			animation: 2s infinite alternate-reverse flicker;
+		}
+
+		@keyframes flicker {
+			from {
+				transform: rotate(15deg)
+			}
+			to {
+				transform: rotate(-15deg);
+				opacity: 50%;
+
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+  <div class="canvas">
+		<div class="top-half"></div>
+		<div class="table"></div>
+		<div class="bottom-red"></div>
+		<!-- put your objects here -->
+		<div class="ruler"></div>
+		<div class="shadow"></div>
+		<div class="apple"></div>
+
+		<div class="vase">
+			<div class="vase-shadow"></div>
+			<div class="vase-bottom"></div>
+			<div class="vase-top"></div>
+			<div class="flower">
+				<div class="stem"></div>
+				<div class="petals">
+					<div class="petal one"></div>
+					<div class="petal two"></div>
+					<div class="petal three"></div>
+					<div class="petal four"></div>
+					<div class="petal five"></div>
+				</div>
+			</div>
+			<div class="flower two">
+				<div class="stem"></div>
+				<div class="petals"></div>
+			</div>
+		</div>
+
+		<div class="plate">
+			<div class="cake"></div>
+			<div class="candle"></div>
+			<div class="flame"></div>
+		</div>
+
+  </div>
+
+</body>
+
+</html>
