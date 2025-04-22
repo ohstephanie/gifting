@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/css/dial.css?v=1.1" rel="stylesheet">    <title>memory site</title>
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+</head>
+
+<body>
+    <main>
+        <div id="dial">
+            <div id="band-selector"></div>
+            <div id="dial-posts">
+                                                            <a href="/posts/dodgeball">
+                            <div class="color-block" style="background-color: #71aa66"></div>
+                        </a>
+                                                                                <a href="/posts/mid-april">
+                            <div class="color-block" style="background-color: #f7ffd3"></div>
+                        </a>
+                                                                                <a href="/posts/a402">
+                            <div class="color-block" style="background-color: #b1a7f2"></div>
+                        </a>
+                                                                                <a href="/posts/c214">
+                            <div class="color-block" style="background-color: #ffeb6b"></div>
+                        </a>
+                                                                                <a href="/posts/mirror-selfies">
+                            <div class="color-block" style="background-color: #d8d8d8"></div>
+                        </a>
+                                                                                <a href="/posts/my-poetry-portfolio">
+                            <div class="color-block" style="background-color: #e5fcfb"></div>
+                        </a>
+                                                                                <a href="/posts/c126">
+                            <div class="color-block" style="background-color: #ffe067"></div>
+                        </a>
+                                                                                <a href="/posts/dance">
+                            <div class="color-block" style="background-color: #f29dcc"></div>
+                        </a>
+                                                                                <a href="/posts/i-got-a-job">
+                            <div class="color-block" style="background-color: #ebff38"></div>
+                        </a>
+                                                                                <a href="/posts/reflections-on-slacking-off">
+                            <div class="color-block" style="background-color: #845656"></div>
+                        </a>
+                                                                                <a href="/posts/freshman-spring-schedule">
+                            <div class="color-block" style="background-color: #e7f7c0"></div>
+                        </a>
+                                                                                <a href="/posts/freshman-fall-schedule">
+                            <div class="color-block" style="background-color: #5964ff"></div>
+                        </a>
+                                                                                <a href="/posts/sophomore-spring-schedule">
+                            <div class="color-block" style="background-color: #fc986a"></div>
+                        </a>
+                                                                                <a href="/posts/sophomore-fall-schedule">
+                            <div class="color-block" style="background-color: #000000"></div>
+                        </a>
+                                                                                <a href="/posts/junior-fall-schedule">
+                            <div class="color-block" style="background-color: #8ba7c4"></div>
+                        </a>
+                                                                                <a href="/posts/junior-spring-schedule">
+                            <div class="color-block" style="background-color: #f77676"></div>
+                        </a>
+                                                                                <a href="/posts/spelman-53">
+                            <div class="color-block" style="background-color: #ddeeff"></div>
+                        </a>
+                                                </div>
+            <button id="audio-toggle" aria-label="Toggle sound">unmute</button>
+        </div>  
+    </main>
+
+    <script>
+        const dial = document.getElementById('dial');
+        const bandSelector = document.getElementById('band-selector');
+        const audioToggle = document.getElementById('audio-toggle');
+        let audioContext = null;
+        let oscillator = null;
+        let gainNode = null;
+
+        audioToggle.addEventListener('click', () => {
+            if (!audioContext) {
+                // Initialize audio
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                oscillator = audioContext.createOscillator();
+                gainNode = audioContext.createGain();
+                gainNode.gain.value = 0.1;
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                oscillator.start();
+                audioContext.resume();
+                audioToggle.textContent = 'mute';
+            } else {
+                // Cleanup audio
+                oscillator.disconnect();
+                oscillator = null;
+                gainNode = null;
+                audioContext = null;
+                audioToggle.textContent = 'unmute';
+            }
+        });
+
+        dial.addEventListener('mouseleave', () => {
+            if (oscillator) {
+                oscillator.disconnect();
+                oscillator = null;
+                gainNode = null;
+                audioContext = null;
+                audioToggle.textContent = 'unmute';
+            }
+        });
+
+        dial.addEventListener('mousemove', (e) => {
+            const rect = dial.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            bandSelector.style.left = `${x}px`;
+
+            if (audioContext && oscillator) {
+                const element = document.elementFromPoint(e.clientX, e.clientY);
+                // Look for either the color-block div or check its parent if it's the <a>
+                const colorElement = element.classList.contains('color-block') ? 
+                    element : 
+                    element.querySelector('.color-block');
+                
+                if (colorElement && colorElement.style.backgroundColor) {
+                    const color = colorElement.style.backgroundColor;
+                    const rgb = color.match(/\d+/g);
+                    if (rgb) {
+                        const avgColor = (parseInt(rgb[0]) + parseInt(rgb[1]) + parseInt(rgb[2])) / 3;
+                        const frequency = 200 + (avgColor * 2.35);
+                        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
