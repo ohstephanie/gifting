@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="base.css" type="text/css" />
 	<style>
 		.canvas {
-			background-color: rgb(150, 44, 25);
+			background-color: rgb(171, 58, 38);
 			z-index: 0;
 		}
 
@@ -24,7 +24,7 @@
 		.bottom-red {
 			height: 70%;
 			width: 300px;
-			background-color: rgb(150, 44, 25);
+			background-color: rgb(171, 58, 38);
 			position: absolute;
 			bottom: 0;
 			right: -100px;
@@ -34,17 +34,26 @@
 			width: 90px;
 			height: 90px;
 			border-radius: 45%; /* Not a perfect circle */
-			background-color: rgb(99, 20, 20);
+			background-color: rgb(125, 29, 29);
 			position: absolute;
 			top: 300px;
 			left: 150px;
+		}
+
+		.apple-stem {
+			height: 25px;
+			width: 4px;
+			position: absolute;
+			left: 190px;
+			bottom: 230px;
+			background-color: rgb(61, 24, 10);
 		}
 
 		.shadow {
 			width: 90px;
 			height: 90px;
 			border-radius: 50%; /* Not a perfect circle */
-			background-color: rgba(31, 15, 15, 0.5);
+			background-color: rgba(30, 25, 25, 0.5);
 			position: absolute;
 			top: 310px;
 			left: 140px;
@@ -82,10 +91,10 @@
 		.vase-shadow {
 			height: 100px;
 			width: 100%;
-			background-color: rgba(255,255,255, 0.5);
+			background-color: rgba(45, 41, 41, 0.5);
 			position: absolute;
 			left: -10px;
-			bottom: -50px; /* Make position from bot 0 so it goes to the bottom*/
+			bottom: -60px; /* Make position from bot 0 so it goes to the bottom*/
 			border-radius: 50%;
 		}
 
@@ -200,6 +209,17 @@
 			z-index: 0; /* Ruler goes behind everything except the red*/
 		}
 
+		.ruler-shadow {
+			height: 550px;
+			width: 20px;
+			position: absolute;
+			background-color: rgb(49, 45, 45, 0.5);
+			transform: rotate(-85deg) skew(-10deg);
+			right: 355px;
+			top: 45px;
+			z-index: 0; /* Ruler goes behind everything except the red*/
+		}
+
 		.plate {
 			background-color: rgba(255,255,255,0.5);
 			height: 70px;
@@ -208,6 +228,16 @@
 			position: absolute;
 			bottom: 50px;
 			right: 80px;
+		}
+
+		.plate-shadow {
+			background-color: rgba(39, 35, 35, 0.5);
+			height: 70px;
+			width: 180px;
+			border-radius: 50%;
+			position: absolute;
+			bottom: 40px;
+			right: 90px;
 		}
 
 		.cake {
@@ -219,6 +249,17 @@
 			transform: rotate(190deg);
 			position: absolute;
 			bottom: 10px;
+		}
+
+		.cake-top {
+			width: 100px;
+			height: 50px;
+			border-top: 10px solid transparent;
+			border-bottom: 40px solid transparent;
+			border-left: 118px solid rgb(181, 137, 100);
+			transform: rotate(190deg);
+			position: absolute;
+			bottom: 20px;
 		}
 
 		.candle {
@@ -261,9 +302,11 @@
 		<div class="table"></div>
 		<div class="bottom-red"></div>
 		<!-- put your objects here -->
+		<div class="ruler-shadow"></div>
 		<div class="ruler"></div>
 		<div class="shadow"></div>
 		<div class="apple"></div>
+		<div class="apple-stem"></div>
 
 		<div class="vase">
 			<div class="vase-shadow"></div>
@@ -281,12 +324,20 @@
 			</div>
 			<div class="flower two">
 				<div class="stem"></div>
-				<div class="petals"></div>
+				<div class="petals">
+					<div class="petal one"></div>
+					<div class="petal two"></div>
+					<div class="petal three"></div>
+					<div class="petal four"></div>
+					<div class="petal five"></div>
+				</div>
 			</div>
 		</div>
 
+		<div class="plate-shadow"></div>
 		<div class="plate">
 			<div class="cake"></div>
+			<div class="cake-top"></div>
 			<div class="candle"></div>
 			<div class="flame"></div>
 		</div>
