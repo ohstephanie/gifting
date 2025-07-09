@@ -2,6 +2,9 @@
 
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Pacifico&display=swap" rel="stylesheet">
         <title>cake!</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, user-scalable=no" />
@@ -11,10 +14,67 @@
                 background-color: white;
                 color: burlywood;
             }
+
+            .instrument-serif-regular {
+            font-family: "Instrument Serif", serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+
+            .instrument-serif-regular-italic {
+                font-family: "Instrument Serif", serif;
+                font-weight: 400;
+                font-style: italic;
+            }
+
+            body {
+                text-align: center;
+                background-color: b;
+            }
+
+            .cake-top {
+                width: 200px;
+                height: 100px;
+                background-color: pink;
+                border-radius: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 20%;
+                position: absolute;
+            }
+
+            .cake-bpdy {
+                
+            }
+
+            .cake-bottom {
+                width: 200px;
+                height: 100px;
+                background-color: pink;
+                border-radius: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 25%;
+                position: absolute;
+            }
+
+            .cake-shadow {
+                width: 200px;
+                height: 100px;
+                background-color: rgb(165, 113, 122);
+                border-radius: 20px;
+                left: 51%;
+                transform: translateX(-50%);
+                top: 21%;
+                position: absolute;
+            }
         </style>
     </head>
 
     <body>
-
+        <h1 class="instrument-serif-regular">A collection of cakes my mom and I have made</h1>
+        <div class="cake-shadow"></div>
+        <div class="cake-top"></div>
+        <div class="cake-bottom"></div>
     </body>
 </html>
